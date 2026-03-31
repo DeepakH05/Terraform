@@ -1,23 +1,29 @@
 variable "region" {
-  default = "ap-south-1"
+  description = "AWS Region"
+  default     = "ap-south-1"
 }
 
 variable "cluster_name" {
-  default = "demo-eks"
+  description = "EKS Cluster Name"
+  default     = "demo-eks"
 }
 
 variable "cidr" {
-  default = "10.0.0.0/24"
+  description = "VPC CIDR"
+  default     = "10.0.0.0/24"
 }
 
 variable "public_subnets" {
-  default = ["10.0.0.0/26", "10.0.0.64/26"]
+  description = "Public subnet CIDRs"
+  default     = ["10.0.0.0/26", "10.0.0.64/26"]
 }
 
 variable "private_subnets" {
-  default = ["10.0.0.128/26", "10.0.0.192/26"]
+  description = "Private subnet CIDRs"
+  default     = ["10.0.0.128/26", "10.0.0.192/26"]
 }
 
 variable "azs" {
-  default = ["ap-south-1a", "ap-south-1b"]
+  description = "Availability Zones"
+  default     = ["ap-south-1a", "ap-south-1b"]
 }

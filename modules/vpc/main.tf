@@ -11,6 +11,10 @@ resource "aws_subnet" "public" {
   cidr_block              = var.public_subnets[count.index]
   availability_zone       = var.azs[count.index]
   map_public_ip_on_launch = true
+
+  tags = {
+  "kubernetes.io/role/elb" = "1"
+}
 }
 
 
@@ -20,6 +24,10 @@ resource "aws_subnet" "private" {
   vpc_id            = aws_vpc.main.id
   cidr_block        = var.private_subnets[count.index]
   availability_zone = var.azs[count.index]
+
+  tags = {
+  "kubernetes.io/role/internal-elb" = "1"
+}
 }
 
 resource "aws_internet_gateway" "igw" {
