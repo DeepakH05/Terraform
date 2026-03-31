@@ -12,7 +12,7 @@ module "eks" {
 
   cluster_endpoint_public_access  = var.cluster_endpoint_public_access
   cluster_endpoint_private_access = var.cluster_endpoint_private_access
-  public_access_cidrs             = var.public_access_cidrs
+  cluster_endpoint_public_access_cidrs = var.public_access_cidrs
 
   # Example managed node group
   eks_managed_node_groups = {
