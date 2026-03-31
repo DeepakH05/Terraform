@@ -18,12 +18,3 @@ output "cluster_arn" {
   value       = module.eks.cluster_arn
 }
 
-output "node_group_names" {
-  description = "Names of the managed node groups"
-  value       = module.eks.node_group_names
-}
-
-output "node_group_arns" {
-  description = "ARNs of the managed node groups"
-  value       = module.eks.node_group_arns
-}
